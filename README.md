@@ -10,9 +10,9 @@
 ## 첫번째 목표
 
 원격 저장소에 저장되어있는 파일들을 읽어와 내 컴퓨터의 폴더 디렉토리와 연동시킵니다.  
-또는 내 컴퓨터의 폴더에 있는 자료들을 원격 저장소에 올립니다.  
+또는 내 컴퓨터의 폴더에 있는 자료들을 원격 저장소에 올립니다.
 
-[[reference] Git Commands - Getting and Creating Projects](https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Getting-and-Creating-Projects)
+[[reference] Git Commands - Getting and Creating Projects](https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Getting-and-Creating-Projects)  
 [[참고자료] Git 명령어 - 프로젝트 가져오기와 생성하기](https://git-scm.com/book/ko/v2/Appendix-C%3A-Git-%EB%AA%85%EB%A0%B9%EC%96%B4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0%EC%99%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)
 
 ### 1단계: 기본 설정
@@ -35,9 +35,9 @@
 1. 원격 저장소 만들기
 
 2. 원격 저장소와 로컬 저장소 연동하기
-    ``` git clone``` 과 ```git init``` 방법이 있습니다.
-    이 두가지 방법 모두 결국 .git 폴더(숨김파일 해제시 보임) 를 만드는 작업입니다.
-    로컬 저장소에 . git 폴더가 있어야 깃을 시작할 수 있습니다.
+    ``` git clone``` 과 ```git init``` 방법이 있습니다.  
+    이 두가지 방법 모두 결국 .git 폴더(숨김파일 해제시 보임) 를 만드는 작업입니다.  
+    로컬 저장소에 . git 폴더가 있어야 깃을 시작할 수 있습니다.  
     .git 폴더에는 수정내용, 변경사항, 날짜, 올린사람 등등 각종 자료들이 들어있습니다.
 
     - **```git clone```을 할 경우와 특징**
@@ -92,8 +92,7 @@
 	```git checkout -- <파일 이름>```
 
 7. 커밋 로그 보기
-
-  ```git log```
+	```git log```
 
 
 ## 세번째 목표
@@ -129,18 +128,67 @@
 
 ## 네번째 목표
 
-깃의 꽃인 Branch를 사용해보자  
-[강의 링크](https://www.youtube.com/watch?v=I4latDqXo5M&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=7)
+Branch를 만들고 사용해보자  
+브랜치란? [동비나 유튜브 강의 링크](https://www.youtube.com/watch?v=I4latDqXo5M&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=7)
 
-1. 깃 브렌치를 현재 브렌치를 확인합니다. ```git branch```
-2. 깃 브렌치를 만듭니다. ```git branch <원하는 브렌치 이름>```
-	브렌치를 잘 못 만들었을 때는 ```git branch -d <지울 브렌치 이름>``` 입력합니다.
-3. 깃 체크아웃으로 브렌치를 이동합니다. ```git checkout <원하는 브렌치>```
-4. 깃 브렌치로 다시 현재 브렌치를 확인합니다.(\*가 이동됨)```git branch```
-5. 브렌치가 잘 바뀌었다면 원하는 문서작업을 합니다.
+### 1단계: 브랜치 생성
+
+1. 깃 브랜치를 현재 브랜치를 확인합니다. ```git branch```
+2. 깃 브랜치를 만듭니다. ```git branch <원하는 브랜치 이름>```
+	브랜치를 잘 못 만들었을 때는 ```git branch -d <지울 브랜치 이름>``` 입력합니다.
+
+### 2단계: 브랜치 이동
+
+3. 깃 체크아웃으로 브랜치를 이동합니다. ```git checkout <원하는 브랜치>```
+4. 깃 브랜치로 다시 현재 브랜치를 확인합니다.(\*가 이동됨)```git branch```
+
+### 3단계: 문서 작업 후 브랜치에서 커밋
+
+5. 브랜치가 잘 바뀌었다면 원하는 문서작업을 합니다.
 6. 작업이 끝난 후 ```add``` 와 ```commit``` 을 하고 ```log```로 커밋내용을 확인합니다.
-7. HEAD(가장 최근에 커밋한 메시지)부분이 만든 브렌치를 가르키고, origin(원격 저장소)와 master(메인 브렌치)는 다른 부분을 가르킵니다.
-8. 이제 마스터 브렌치로 돌아갑니다.  ```git checkout master```
-9. 마스터 브렌치에 새로만든 브렌치를 결합(merge)합니다. ```git merge```
+7. HEAD(가장 최근에 커밋한 메시지)부분이 만든 브랜치를 가르키고, origin(원격 저장소)와 master(메인 브랜치)는 다른 부분을 가르킵니다.
+
+### 4단계: 마스터 브랜치로 돌아가서 합치기
+
+결합(Merge)는 보통 마스터 브랜치에서 합니다.
+
+8. 이제 마스터 브랜치로 돌아갑니다.  ```git checkout master```
+9. 마스터 브랜치에 새로만든 브랜치를 결합(merge)합니다. ```git merge```
+
+### 5단계: 마무리
+
 10. 결합이 잘 되면 원격 저장소에 ```push``` 합니다.
+11. 브랜치를 사용할 일이 없으면 ```git branch -d <지울 브랜치 이름>```으로 지웁니다.
+
+## 다섯번째 목표
+
+브랜치 충돌(Conflict) 해결하기
+
+## 여섯번째 목표
+
+원격 저장소 관리하기
+
+## 일곱번째 목표
+
+로그 다루기
+
+## 여덟번째 목표
+
+README.md 관리하기
+
+## 아홉번째 목표
+
+git archive 로 소스코드만 압축하기
+
+## 열번째 목표
+
+특정 커밋 수정 삭제하기
+
+## 열한번째 목표
+
+Git config 환경 설정에 대해 알아보기
+
+## 열두번째 목표
+
+커밋 날짜 변경하기
 
