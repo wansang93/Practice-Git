@@ -7,10 +7,10 @@
 
 2020-07-01 ~ 
 
-## 첫번째 프로젝트 목표
+## 첫번째 목표
 
-원격 저장소에 저장되어있는 파일들을 읽어와 내 컴퓨터의 폴더 디렉토리와 연동시킨다.
-또는 내 컴퓨터의 폴더에 있는 자료들을 원격 저장소에 올린다.
+원격 저장소에 저장되어있는 파일들을 읽어와 내 컴퓨터의 폴더 디렉토리와 연동시킵니다.  
+또는 내 컴퓨터의 폴더에 있는 자료들을 원격 저장소에 올립니다.  
 
 [[reference] Git Commands - Getting and Creating Projects](https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Getting-and-Creating-Projects)
 [[참고자료] Git 명령어 - 프로젝트 가져오기와 생성하기](https://git-scm.com/book/ko/v2/Appendix-C%3A-Git-%EB%AA%85%EB%A0%B9%EC%96%B4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0%EC%99%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)
@@ -31,7 +31,6 @@
     명령 프롬포트에서 등록  ``윈도우+R`` -> ``cmd`` ->
     ```git config global user.name wansang```
     ```git config global user.email wansang93@naver.com```
-    
     
 ### 2단계
 
@@ -58,13 +57,56 @@
         3. 경로를 설정해 줍니다. 명령어는 ```git remote add origin https://github.com/wansang93/Practice-Git``` 입니다.
         4. 즉 해당 폴더(로컬 저장소)에서 깃 폴더를 생성하여 원격 저장소와 ```git remote``` 명령어를 사용해서 연동을 합니다.
 
-
 ### 3단계
 
 로컬 저장소에 있는 파일을 수정해서 원격 저장소에 올리기
 
 ![깃 동작 과정](./photo/002.jpg)
 
-```git add .```
-```git commit -m "작성하고 싶은 메시지"```:   
+```git add .```  
+```git commit -m "first commit"```:   
 ```git push```  
+
+## 두번째 목표
+
+로컬 저장소에 있는 파일을 원격 저장소에 올리고 내리기
+
+### 1단계
+
+파일 올리기, 내리기
+
+1. 추가, 수정, 삭제된 파일이 있는지 확인 및 깃의 현재 상태 표시
+	```git status```
+
+2. 파일을 Staging Area 로 올리기
+    특정 파일 올리기 -> ```git add <파일 이름>```
+    모든 파일 올리기 -> ```git add .```
+
+3. Staging Area 에 파일을 내리기
+	```git reset <파일 이름>```
+
+4. Local Repository에 파일 올리기
+	```git commit -m "<작성하고 싶은 메시지>"```
+
+5. Remote Repository에 파일 올리기
+	```git push```
+
+### 2단계
+
+파일 수정 무시하기, 커밋 메시지 수정하기
+
+5. 추가, 수정, 삭제된 파일이 있는지 확인 및 깃의 현재 상태 표시
+	```git status```
+
+6. 파일 수정 무시하기
+	```git checkout -- <파일 이름>```
+
+7. 커밋 메시지 수정
+	```git commit --amend``` -> 수정하기
+
+## 세번째 목표
+
+커밋 내역을 확인하고 수정하기
+
+커밋 내역을 보면 개발자들이 언제 파일을 수정하고 어떻게 했는지 알 수 있습니다.  
+이 기록들을 어떻게 수정할 수 있는지 알아봅시다.
