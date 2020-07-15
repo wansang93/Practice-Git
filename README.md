@@ -8,8 +8,9 @@
 또 종혁이에게 깃을 가르쳐 주면서 저 스스로 배울 수 있어서 좋은 기회가 되었으면 좋겠습니다.
 
 - 참고문서
-  - 전문가용: [Pro GIT](https://git-scm.com/book/ko/v2) `git scm`이라고 검색해서 나오는 문서 pro git라고 불립니다. 인터넷에 공개 되어 있습니다.
-  - 초보자용: [Git 입문](https://backlog.com/git-tutorial/kr/) `git 입문`이라고 검색해서 나오는 첫 번째 글 
+  - 지옥에서 온 문서 관리자 깃 & 깃허브 입문(고경희 지음, 이지스퍼블리싱)
+  - 전문가용: [Pro GIT](https://git-scm.com/book/ko/v2) 웹 사이트
+  - 초보자용: [Git 입문](https://backlog.com/git-tutorial/kr/) 웹 사이트
 
 ## 첫번째 목표
 
@@ -149,9 +150,8 @@ git bash 에서 리눅스 명령어 연습, vim 사용법 익히기
 
 4. 텍스트 문서 내용 확인하기
 
-- ```cat <파일 이름>.txt```: 텍스트 문서를 터미널에서 확인 가능
-
-(cat은 concatenate의 줄임말)
+    - ```cat <파일 이름>.txt```: 텍스트 문서를 터미널에서 확인 가능  
+        (cat은 concatenate의 줄임말)
 
 ### 깃에서 기본 편집기 및 변경하기
 
@@ -207,7 +207,7 @@ $ git config --global core.editor "notepad++"
 ## 네번째 목표
 
 Branch를 만들고 사용해보자  
-브랜치란? [동비나 유튜브 강의 링크](https://www.youtube.com/watch?v=I4latDqXo5M&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=7)
+브랜치란? [동비나 유튜브 강의 링크 7강](https://www.youtube.com/watch?v=I4latDqXo5M&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=7)
 
 ### 1단계: 브랜치 생성
 
@@ -248,9 +248,10 @@ Branch를 만들고 사용해보자
 Git에서는 자동으로 충돌난 부분을 표시해 줍니다.
 
 ``` python
-<<<<<<<<<  # 충돌이 시작한 부분
+<<<<<<<<<  # 충돌이 난 부분(수정 후 삭제)
 # 충돌 내용
->>>>>>>>>  # 충돌이 끝나는 부분
+ ========  # 가운데 선 위아래 차이 경계선(수정 후 삭제)
+>>>>>>>>>  # 충돌이 난 부분(수정 후 삭제)
 ```
 
 이 부분을 해결(원하는 부분을 지우는 등)한 후 커밋하면 자동으로 merge가 됩니다.
@@ -343,7 +344,7 @@ Git config 환경 설정에 대해 알아보기
 
 커밋 날짜 변경하기
 
-복잡하니 강의 참고 [https://www.youtube.com/watch?v=ys0lVeTHl7c&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=15](https://www.youtube.com/watch?v=ys0lVeTHl7c&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=15)
+다양한 기능은 강의 참고 [동비나 유튜브 강의 링크 15강](https://www.youtube.com/watch?v=ys0lVeTHl7c&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=15)
 
 수정하고 싶은 커밋 아래의 커밋 주소를 복사 -> ```git rebase -i <붙여넣기>``` ->  
 vim 편집기 -> pick 을 edit으로 수정 -> ```GIT_COMMITER_DATE="Oct 1 10:00:00 2018 +0000" git commit --amend -no edit --date "Oct 1 10:00:00 2018 +0000"``` ->  
@@ -360,7 +361,7 @@ vim 편집기 -> pick 을 edit으로 수정 -> ```GIT_COMMITER_DATE="Oct 1 10:00
     깃 버전을 저장할 때마다 버전을 만든 사용자 정보도 함께 저장하기 때문에 사용자 이름과 메일주소를 등록해야 합니다.
 
     - ```git config --global user.name 'wansang'```: 사용자 이름 정보 저장
-    - ```git config --global user.name 'wansang'```: 사용자 이메일 정보 저장
+    - ```git config --global user.email 'wansang93@naver.com'```: 사용자 이메일 정보 저장
 
 3. 깃 시작하기
 
@@ -377,6 +378,10 @@ vim 편집기 -> pick 을 edit으로 수정 -> ```GIT_COMMITER_DATE="Oct 1 10:00
         5. changes to be committed: Stage에 파일이 있습니다.
         6. nothing to commit, working tree clean: Working tree와 Stage에 파일이 없습니다.
 
+        unmodified, modified, staged 상태
+
+        ![상태 이미지](photo/004.jpg)
+
 5. 깃 스테이징하기
 
     - ```git add <파일 이름>```: Working tree에 **해당 파일**을 Stage로 올립니다.
@@ -385,5 +390,65 @@ vim 편집기 -> pick 을 edit으로 수정 -> ```GIT_COMMITER_DATE="Oct 1 10:00
 6. 스테이지에 올라온 파일 커밋하기
 
     - ```git commit -m "<커밋 메시지>"```: 커밋 메시지(보통 변경 이유나 특이사항)을 작성하고 올리기
-    - ```git log```: 커밋 이력을 확인합니다.
     - ```git commit -am "<커밋 메시지>"```: add와 commit을 한꺼번에 합니다.
+
+7. 커밋 내용 확인하기
+    - ```git log```: 커밋 이력을 확인합니다.
+    - ```git diff```: 현재 상황과 변경 사항을 비교하여 확인합니다.
+  
+8. 작업 되돌리기(Reset, Restore)
+
+    ![깃 동작 과정](./photo/002.jpg)
+
+    1. add와 commit을 하지 않은 상태일 때(Working tree(작업 트리)에서만 수정함)
+       - ```git restor <파일 이름>```: 작업 트리에서 수정한 **해당 파일** 되돌리기
+       - ```git restore .```: 작업 트리에서 수정한 **모든 파일** 되돌리기
+    2. add만 하고 commit은 하지 않은 상태일 때(Staging Area에서 Working tree로 이동하고 싶을 때)
+       - ```git reset HEAD <파일 이름>```: Staging Area에 있는 **해당 파일**이 내려오고 1번 상태가 됩니다.
+       - ```git reset HEAD .```: Staging Area에 있는 **모든 파일**이 내려오고 1번 상태가 됩니다.
+    3. add와 commit 둘 다 한 상태(최신 커밋 되돌리기)
+       - ```git reset```: 최신 커밋을 되돌리고 1번 상태가 됩니다.
+
+    ```git reset <옵션> <commit>``` 옵션들
+
+       <옵션>
+       1. --sort: 최근 커밋을 하기 전 상태로 작업 트리를 되돌립니다.
+       2. --mixed: 최근 커밋과 스테이징을 하기 전 상태로 작업 트리로 되돌립니다.(기본 값)
+       3. --hard: 최근 커밋과 스테이징, 파일 수정을 하기 전 상태(하드한 상태)로 되돌립니다.
+
+       <commit>
+       1. HEAD^: 해드 이전 커밋으로 이동
+       2. HEAD~3: 해드 포함 3칸 이전 커밋으로 이동
+       3. 커밋 해쉬: 해당 해쉬 커밋으로 이동
+
+9. 브랜치 상태보기
+
+    - ```git branch```: 현재 브랜치의 상태와 갯수를 봅니다.
+    - ```git log --oneline --branches --graph```: 브랜치 상태를 그래프로 봅니다.
+
+10. 브랜치 만들기
+
+    - ```git branch <브랜치 이름>```: 브랜치 이름으로 브랜치를 만듭니다.
+
+11. 브랜치 이동
+
+    - ```git checkout <브랜치 이름>```: 브랜치 이름으로 이동합니다.
+
+12. 브랜치 합치기
+
+    - ```git merge```: 이어질 브랜치에서 사용해야하고 다른 브랜치와 합칩니다.
+
+13. 브랜치 삭제
+
+    - ```git branch -d <브랜치 이름>```: 해당 브랜치를 삭제합니다.
+
+14. 수정 중인 파일 감추기 및 되돌리기
+
+    현재 작업하는 내용을 특정 공간(stash)에 임시적으로 보관이 가능합니다.  
+    이 기능을 쓰면 경고 메시지가 나오지 않아 편하게 작업할 수 있습니다.
+
+    - ```git stash```: 해당 작업들을 stash에 임시적으로 보관합니다.
+    - ```git stash list```: stash 목록을 보여줍니다.
+    - ```git stash apply```: stash에 보관된 자료를 현재 문서에 적용합니다.
+    - ```git stash drop```: stash에 보관된 자료를 삭제합니다.
+    - ```git stash pop```: stash에 보관된 자료를 현재 문서에 적용하고 삭제합니다.(apply + pop)
