@@ -1,6 +1,6 @@
 # 깃허브 마스터를 꿈꾸며
 
-2020-07-01 ~ 
+2020-07-01 ~ 2020-07-17 (초급 단계 완성)
 
 먼저 강의를 가르쳐 준 유튜버 동비나 형님 감사합니다.
 [동비나 유튜브 링크](https://www.youtube.com/watch?v=rhP5pseOJc0&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81)
@@ -12,7 +12,7 @@
   - 전문가용: [Pro GIT](https://git-scm.com/book/ko/v2) 웹 사이트
   - 초보자용: [Git 입문](https://backlog.com/git-tutorial/kr/) 웹 사이트
 
-## 첫번째 목표
+## :zero::one: 첫번째 목표
 
 원격 저장소에 저장되어있는 파일들을 읽어와 내 컴퓨터의 폴더 디렉토리와 연동시킵니다.  
 또는 내 컴퓨터의 폴더에 있는 자료들을 원격 저장소에 올립니다.
@@ -71,7 +71,7 @@
 ```git commit -m "first commit"```   
 ```git push```  
 
-## 두번째 목표
+## :zero::two: 두번째 목표
 
 로컬 저장소에 있는 파일을 원격 저장소에 올리고 내리기
 
@@ -117,7 +117,7 @@
 	```git log```
 
 
-## 세번째 목표
+## :zero::three: 세번째 목표
 
 git bash 에서 리눅스 명령어 연습, vim 사용법 익히기
 
@@ -204,7 +204,7 @@ $ git config --global core.editor "notepad++"
 따라서 "warning: LF will be replaced by CRLF in hello.txt" 같은 경고 메시지는  
 ```윈도우 Enter(CRLF)```가 ```리눅스 Enter(LF)```로 대체되어서 깃이 올린다는 의미입니다.
 
-## 네번째 목표
+## :zero::four: 네번째 목표
 
 Branch를 만들고 사용해보자  
 브랜치란? [동비나 유튜브 강의 링크 7강](https://www.youtube.com/watch?v=I4latDqXo5M&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=7)
@@ -239,7 +239,7 @@ Branch를 만들고 사용해보자
 10. 결합이 잘 되면 원격 저장소에 ```push``` 합니다.
 11. 브랜치를 사용할 일이 없으면 ```git branch -d <지울 브랜치 이름>```으로 지웁니다.
 
-## 다섯번째 목표
+## :zero::five: 다섯번째 목표
 
 브랜치 충돌(Conflict) 해결하기
 
@@ -256,7 +256,7 @@ Git에서는 자동으로 충돌난 부분을 표시해 줍니다.
 
 이 부분을 해결(원하는 부분을 지우는 등)한 후 커밋하면 자동으로 merge가 됩니다.
 
-## 여섯번째 목표
+## :zero::six: 여섯번째 목표
 
 원격 저장소 관리하기
 
@@ -270,7 +270,7 @@ Git에서는 자동으로 충돌난 부분을 표시해 줍니다.
 - ```git remote rename <기존 이름> <바꿀 이름>```: 원격 저장소 이름 바꾸기
 - ```git rm <원격 저장소 이름>```: 원격 저장소 제거
 
-## 일곱번째 목표
+## :zero::seven: 일곱번째 목표
 
 로그 다루기
 
@@ -283,13 +283,17 @@ Git에서는 자동으로 충돌난 부분을 표시해 줍니다.
 
 로그는 원격저장소에서도 이쁘게 나오지만 이런게 있다고 알아두면 좋음
 
-## 여덟번째 목표
+## :zero::eight: 여덟번째 목표
 
 README.md 관리하기
 
-MarkDown 가이드 사이트 [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)
+MarkDown 가이드 사이트 [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)  
 
-## 아홉번째 목표
+MarkDown 이모티콘 사이트 Search on Google ```markdown emoji```
+   - 1st site [https://gist.github.com/rxaviers/7360908](https://gist.github.com/rxaviers/7360908)
+   - 2ed site [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+
+## :zero::nine: 아홉번째 목표
 
 git archive 로 소스코드만 압축하기
 
@@ -297,7 +301,7 @@ git archive 로 소스코드만 압축하기
 
 git 관련 파일을 제거하고 파일을 압축 배포할 때 사용
 
-## 열번째 목표
+## :one::zero: 열번째 목표
 
 커밋 내역을 확인하고 수정하기
 
@@ -331,7 +335,7 @@ git 관련 파일을 제거하고 파일을 압축 배포할 때 사용
 5. 수정이 완료되면 ```ESC```를 누르고 ```:wq```(저장 후 종료) 를 씁니다.
 6. 로컬 저장소로 강제로 푸쉬 ```git push -f```합니다.
 
-## 열한번째 목표
+## :one::one: 열한번째 목표
 
 Git config 환경 설정에 대해 알아보기
 
@@ -340,7 +344,7 @@ Git config 환경 설정에 대해 알아보기
 - ```git config user.name "<다른 이름>"```: 다른 이름으로 유저 이름 설정
 - ```git config user.email "<다른 이메일>"```: 다른 이메일로 유저 이메일 설정
 
-## 열두번째 목표
+## :one::two: 열두번째 목표
 
 커밋 날짜 변경하기
 
@@ -350,7 +354,76 @@ Git config 환경 설정에 대해 알아보기
 vim 편집기 -> pick 을 edit으로 수정 -> ```GIT_COMMITER_DATE="Oct 1 10:00:00 2018 +0000" git commit --amend -no edit --date "Oct 1 10:00:00 2018 +0000"``` ->  
 ```git rebase --continue```
 
-# 깃 모든 명령어 정리
+## :one::three: 열세번째 목표
+
+깃허브에 SSH 원격 접속하기
+
+SSH란 Secure Shell의 줄임말로 보안이 강화된 안전한 방법으로 정보를 교환하는 방식입니다.  
+Private Key와 Public Key를 한 쌍으로 묶어서 컴퓨터를 인증합니다.  
+
+
+SSH 방식으로 깃허브 저장소에 접속하는 과정을 간단히 살펴보자
+
+1. 사용자가 만든 퍼블릭 키를 깃허브 서버에 전송합니다.
+2. 사용자 컴퓨터에 깃허브 저장소에 접속하면 사용자 컴퓨터에 있는 프라이빗 키와 깃허브 서버의 퍼블릭 키를 교환합니다.
+3. 교환할 때 두 키가 서로 맞으면 사용자 컴퓨터와 깃허브 저장소가 연결 됩니다.
+
+### 1단계: SSH 키 생성하기
+
+``` bash
+$ cd ~  # 홈 디렉토리로 이동합니다.
+$ ssh-keygen  # ssh key generate
+```
+-> 우리는 잘 모르니 아무것도 입력하지 말고 ```Enter``` 만 계속 누르면 키가 생성됩니다.  
+
+### 2단계: SSH 키 생성 확인하기
+
+``` bash
+$ cd ~/.ssh  # .ssh 폴더로 이동합니다. 없으면 ssh 키생성이 안됬습니다.
+$ ls -al  # 폴더안의 내용을 확인합니다.
+```
+
+``` bash
+total 17
+drwxr-xr-x 1 wansang 197609    0  7월 17 05:37 .
+drwxr-xr-x 1 wansang 197609    0  7월 17 05:37 ..
+-rw-r--r-- 1 wansang 197609 2610  7월 17 05:37 id_rsa  # private key
+-rw-r--r-- 1 wansang 197609  577  7월 17 05:37 id_rsa.pub  # public key
+```
+
+### 3단계: 깃허브에 퍼블릭 키 전송하기
+
+SSH 방식을 사용해서 깃허브에 접속하기
+
+1. 퍼블릭 키를 깃허브에 올리기
+
+    ``` bash
+    $ cd ~/.ssh
+    $ cat id_rsa.pub
+    ```
+
+    ssh-rsa로 시작해서 끝까지(drag) 복사(```Ctrl``` + ```Insert```)합니다.
+
+2. 깃허브에 로그인 -> 오른쪽 위 사용자 사진 클릭 -> Setting 클릭 -> SSH and GPG keys 클릭
+3. SSH Keys 에 New SSH Keys 클릭 -> title 작성 후 Key에 붙여넣기(```Shift``` + ```Insert```) -> Add SSH Key 클릭
+4. 이제 로그인 없이 SSH 키를 만들었던 컴퓨터는 깃허브 저장소의 SSH 주소만 알고 있으면 접속이 가능합니다.
+
+### 4단계: SSH 주소로 원격 저장소 연결하기
+
+1. 연결한 원격 저장소를 새로 만들거나 해당 원격 저장소로 들어갑니다.
+2. SSH 주소를 복사합니다.
+3. ```git remote add origin <주소 붙여넣기>``` 로 연결합니다.
+4. 연결이 잘 되었는지 확인하기 위해 ```git remote -v```로 확인합니다.
+
+## :one::four: 열네번째 목표
+
+git rebase 마스터 하기
+
+추후 업데이트
+
+---
+
+# 깃 명령어 정리
 
 1. 깃 설치 확인
 
