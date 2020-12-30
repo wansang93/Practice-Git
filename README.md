@@ -12,6 +12,8 @@
   - 전문가용: [Pro GIT](https://git-scm.com/book/ko/v2) 웹 사이트
   - 초보자용: [Git 입문](https://backlog.com/git-tutorial/kr/) 웹 사이트
 
+- 나중에 볼 영상: [생활코딩 유튜브 링크](https://www.youtube.com/playlist?list=PLuHgQVnccGMA8iwZwrGyNXCGy2LAAsTXk)
+
 14 가지 목표를 동빈나 유튜브와 책에서 가져왔습니다.
 
 ## :zero::one: 첫번째 목표
@@ -36,8 +38,8 @@
     명령 프롬포트에서 등록  `윈도우+R` -> `cmd` ->  
     `git config --global user.name wansang`  
     `git config --global user.email wansang93@naver.com`
-    
-    `git config --global --list`: git에서 설정한 global한 변수들을 봅니다.
+
+    `git config --global --list`: git에서 설정한 global한 변수들을 봅니다.  
     `git config --global --edit`: git에서 설정한 global한 변수들을 수정합니다.
 
 ### 2단계: 원격 저장소(깃허브 사이트)와 로컬 저장소(자신의 컴퓨터 깃 폴더) 연동하기
@@ -72,9 +74,9 @@
 
 ![깃 동작 과정](./photo/002.jpg)
 
-`git add .`  
-`git commit -m "first commit"`   
-`git push`  
+- `git add .`  
+- `git commit -m "first commit"`   
+- `git push`  
 
 ## :zero::two: 두번째 목표
 
@@ -202,9 +204,8 @@ $ git config --global core.editor "notepad++"
 **리눅스**나 **Max**에서 `Enter` 는 `LF` 문자가 삽입되지만  
 **Windows**에서 `Enter` 는 `CR` + `LF` 문자가 삽입됩니다.
 
-> LF: Line Feed -> 커서의 위치를 그대로 두고 종이를 한 라인 올리는 동작
-> 
-> CR: Carriage Return -> 현재 라인에서 커서를 가장 앞으로 옮김
+> LF(Line Feed): 커서의 위치를 그대로 두고 종이를 한 라인 올리는 동작  
+> CR(Carriage Return): 현재 라인에서 커서를 가장 앞으로 옮김
 
 깃은 리눅스 기반이고 우리가 사용하는 컴퓨터는 윈도우기 때문에  
 깃 배시에서 작성된 `리눅스 Enter`를 `윈도우 Enter`로 바꿔야 합니다.
@@ -295,11 +296,12 @@ Git에서는 자동으로 충돌난 부분을 표시해 줍니다.
 
 README.md 관리하기
 
-MarkDown 가이드 사이트 [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)  
+- [MarkDown 가이드 사이트](https://www.markdownguide.org/basic-syntax/)  
+- [MarkDown 수식 참고 사이트](https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/)
 
 MarkDown 이모티콘 사이트 Search on Google `markdown emoji`
-   - 1st site [https://gist.github.com/rxaviers/7360908](https://gist.github.com/rxaviers/7360908)
-   - 2ed site [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+- 1st site [https://gist.github.com/rxaviers/7360908](https://gist.github.com/rxaviers/7360908)
+- 2ed site [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
 
 ## :zero::nine: 아홉번째 목표
 
@@ -363,7 +365,7 @@ Git config 환경 설정에 대해 알아보기
    1. 수정하고 싶은 커밋 아래의 커밋 주소를 복사 
    2. `git rebase -i <붙여넣기>` 
    3. vim 편집기 -> `pick` 을 `edit`으로 수정 후 저장
-   4. `GIT_COMMITER_DATE="Oct 1 10:00:00 2018 +0000 git commit --amend -no edit --date "Oct 1 10:00:00 2018 +0000"`
+   4. `GIT_COMMITER_DATE="Oct 1 10:00:00 2018 +0000 git commit --amend -no-edit --date "Oct 1 10:00:00 2018 +0000"`
    5. `git rebase --continue`
 
 2. Filter를 사용
