@@ -1,14 +1,16 @@
-# 00. Basic CLI
+# Git 강의 요약
+
+## 00. Basic CLI
 
 1. `ls` : 목록 조회 (list)
 
-   ```
+   ```bash
    00_basic_cli.md  a.txt  b/  c.txt  d.txt  e.txt  images/  markdown.md
    ```
 
    `ls -al` : 상세 목록 조회
 
-   ```
+   ```bash
    $ ls -al
    total 20
    drwxr-xr-x 1 campusseven04 197121   0 Dec 29 15:05 ./
@@ -44,7 +46,7 @@
 7. Tab : 자동완성
 8. 방향키 위, 아래 : 명령어 기록 (History)
 
-# 01. Git
+## 01. Git
 
 - `git status` : git으로 관리 되고 있는 폴더(== Repository, 저장소)의 상태를 보여줌
 - `git init` : 현재 폴더를 git으로 관리하겠다 선언! (초기화)
@@ -65,9 +67,9 @@
 
   - `git config --global --list` : 현재 git 프로그램에 설정된 값들을 확인.
 
-# 02. Markdown
+## 02. Markdown
 
-```
+```text
 # heading 1 입니다.
 
 ## heading 2 입니다.
@@ -88,22 +90,10 @@
 3. 3번
 
 코드 블럭 backtic 3개
-```
 
-```bash
-git add a.txt
-git commit -m 'first commit'
-```
+사진: ![bono](images/bono.jpg)
 
-```python
-def hello():
-    return 'hello'
-```
-
-```
-![bono](images/bono.jpg)
-
-[구글](https://google.com)
+링크: [구글](https://google.com)
 
 | 제목        | 내용        | 참고 |
 | ----------- | ----------- | ---- |
@@ -119,10 +109,10 @@ def hello():
   - `git`
     - `commit`
 
----
+줄 추가: ---
 ```
 
-# 03. Git Remote
+## 03. Git Remote
 
 - `git remote` : Remote Repository 주소 등록 (여기서는 GitHub Repo)
 
@@ -142,7 +132,7 @@ def hello():
 - `git clone (주소)` : 주소로부터 Repo 가져오기
 - `git pull (별칭) (브랜치이름)` : `별칭`으로부터 `브랜치`를 pull (내려받기)
 
-# 04. Push Error
+## 04. Push Error
 
 ### Pull을 빠뜨린 경우
 
@@ -195,7 +185,7 @@ def hello():
    create mode 100644 d.txt
   ```
 
-# 05. 취소하기
+## 05. 취소하기
 
 1. git add 취소하기
 
@@ -209,13 +199,13 @@ def hello():
    ```
 
    ```bash
-   $ git restore --staged f.txt
+   git restore --staged f.txt
    ```
 
    - 구버전
 
      ```bash
-     $ git reset HEAD f.txt
+     git reset HEAD f.txt
      ```
 
    ```bash
@@ -231,38 +221,38 @@ def hello():
 
 2. git commit 취소 (되돌아가기)
 
-   ```
-   $ git reset (--mixed) [돌아갈 commit의 hash]
+   ```bash
+   git reset (--mixed) [돌아갈 commit의 hash]
    ```
 
-   ```
-   $ git reset 0935e32
+   ```bash
+   git reset 0935e32
    ```
 
    - 옵션
 
-     ```
-     $ git reset --mixed [hash]
+     ```bash
+     git reset --mixed [hash]
      ```
 
      - staging 없앰 + **작업한 것은 남아있음**.
      - 아무것도 입력 안하면 이 친구 사용!
 
-     ```
-     $ git reset --soft [hash]
+     ```bash
+     git reset --soft [hash]
      ```
 
      - staging 그대로 유지 + **작업한 것 남아있음.**
 
-     ```
-     $ git reset --hard [hash]
+     ```bash
+     git reset --hard [hash]
      ```
 
      - **[주의]** 완전히 취소하는 것 (작업한 것도 삭제!)
 
    - hash
 
-     - ```
+     - ```bash
        git reset 0935e3213cad77483cc39015d22d1dce82835f3b
        ```
 
@@ -273,7 +263,7 @@ def hello():
        - HEAD~2
 
      ```bash
-     $ git reset HEAD~
+     git reset HEAD~
      ```
 
      - commit 되돌리기
@@ -292,17 +282,17 @@ def hello():
      - == 기록이 한번이라도 기록된 파일들이 있는 공간
 
    ```bash
-   $ git restore [파일명]
-   $ git restore a.txt
+   git restore [파일명]
+   git restore a.txt
    ```
 
    - 구버전
 
      ```bash
-     $ git checkout -- [파일명]
+     git checkout -- [파일명]
      ```
 
-# 06. gitignore
+## 06. gitignore
 
 - 우리가 git으로 관리하고 싶지 않은 파일들을 제외 시키는 방법
 
@@ -313,13 +303,13 @@ def hello():
 
   - `.gitignore`에 작성된 파일들은 git으로 관리하지 않겠다! 무시해라!
 
-  ```
+  ```bash
   .DS_Store # Mac OS에서만 사용하는 파일
   ```
 
 - 작성법
 
-  ```
+  ```bash
   f.txt # 특정 파일
   secret/ # 특정 폴더, 그 안에 있는 것들도 다 제외
   *.png # 특정 확장자 / 모든 png는 빼고,
@@ -341,7 +331,7 @@ def hello():
 - `.DS_Store` : Mac OS
 - `Thumbs.db` : Windows
 
-# 07. Branch
+## 07. Branch
 
 - branch : 가지 -> 가지치기
 - `git branch` : 브랜치 목록 확인
@@ -349,12 +339,12 @@ def hello():
 
 - `git switch login` : `login` 브랜치로 이동
 
-  ```
+  ```bash
   $ git switch login
   Switched to branch 'login'
   ```
 
-- `git log --oneline --graph --all` 
+- `git log --oneline --graph --all`
   - 한줄로, 그래프 포함, 브랜치 전부
 - `git switch -c login` : 브랜치 만들면서 바로 이동
   - `git branch login` + `git switch login`
@@ -363,7 +353,7 @@ def hello():
   - `git checkout login` : 이동
   - `git checkout -b login` : 생성하면서 바로 이동
 
-# 08. Merge Branch
+## 08. Merge Branch
 
 ![branch](images/branch.jpg)
 
@@ -374,7 +364,7 @@ def hello():
 
    ![fast-forward](images/fast-forward.jpg)
 
-   ```
+   ```bash
    (main) $ git switch -c login
    (login) $ touch login.txt
    (login) $ git add, git commit
@@ -382,7 +372,7 @@ def hello():
    (main) $ git merge login
    ```
 
-   ```
+   ```bash
    $ git log --oneline --graph --all
    * 3620487 (HEAD -> main, login) login 추가
    * 98712c2 b 추가
@@ -437,7 +427,7 @@ def hello():
    
    ```
 
-# [실습] Fork & PR
+## [실습] Fork & PR
 
 1. Fork
 2. git clone

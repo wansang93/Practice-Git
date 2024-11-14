@@ -59,7 +59,7 @@
         2. `git clone`은 원격 저장소에 있는 것을 다운로드 받아 깃폴더를 만듭니다.
         3. 다운로드와 동시에 자동으로 연동을 해주어  따로 경로 설정을 할 필요는 없습니다.
         4. 즉 다운로드 자체로만으로도 해당 폴더(로컬 저장소)와 원격 저장소가 연동이 되었습니다.
-    
+
     - **`git init` 을 했을 경우와 특징**
 
         1. **로컬 저장소에 작성해 둔 파일**들이 있을 때`git init`명령어를 입력합니다.
@@ -75,7 +75,7 @@
 ![깃 동작 과정](./photo/002.jpg)
 
 - `git add .`  
-- `git commit -m "first commit"`   
+- `git commit -m "first commit"`
 - `git push`  
 
 ## :zero::two: 두번째 목표
@@ -86,7 +86,7 @@
 
 1. 추가, 수정, 삭제된 파일이 있는지 확인 및 깃의 현재 상태 표시
 
-	`git status`
+    `git status`
 
 2. 파일을 Staging Area 로 올리기
 
@@ -95,11 +95,11 @@
 
 3. Staging Area 에 파일을 내리기
 
-	`git reset <파일 이름>`
+    `git reset <파일 이름>`
 
 4. Local Repository에 파일 올리기
 
-	`git commit -m "<작성하고 싶은 메시지>"`
+    `git commit -m "<작성하고 싶은 메시지>"`
 
     - 커밋 메시지 작성하는 방법
       - 좋은 git commit 메시지를 작성하기 위한 7가지 약속 [https://meetup.toast.com/posts/106](https://meetup.toast.com/posts/106)
@@ -107,21 +107,21 @@
 
 5. Remote Repository에 파일 올리기
 
-	`git push`
+    `git push`
 
 ### 2단계: 파일 수정 무시하기
 
-5. 추가, 수정, 삭제된 파일이 있는지 확인 및 깃의 현재 상태 표시
+1. 추가, 수정, 삭제된 파일이 있는지 확인 및 깃의 현재 상태 표시
 
-	`git status`
+    `git status`
 
-6. 파일 수정 무시하기
+2. 파일 수정 무시하기
 
-	`git checkout -- <파일 이름>`
+    `git checkout -- <파일 이름>`
 
-7. 커밋 로그 보기
+3. 커밋 로그 보기
 
-	`git log`
+    `git log`
 
 ## :zero::three: 세번째 목표
 
@@ -169,6 +169,7 @@ git bash 에서 리눅스 명령어 연습, vim 사용법 익히기
 해당 파일 이름이 없을 경우 새로 텍스트 파일을 만듭니다.
 
 ```bash
+# vim으로 test.txt 열기
 $ vim test.txt
 ```
 
@@ -191,9 +192,8 @@ vim은 ex 모드와 입력 모드가 있습니다.
 
 #### vim 이 익숙하지 않고 다른 에티터를 쓰고싶다면?
 
-예) vim 에서 notepadd++ 로 변경
-
 ```bash
+# vim 에서 notepadd++ 로 변경
 $ git config --global core.editor "notepad++"
 ```
 
@@ -223,30 +223,30 @@ Branch를 만들고 사용해보자
 1. 깃 브랜치를 현재 브랜치를 확인합니다. `git branch`
 2. 깃 브랜치를 만듭니다. `git branch <원하는 브랜치 이름>`
 
-	브랜치를 잘 못 만들었을 때는 `git branch -d <지울 브랜치 이름>` 입력합니다.
+    브랜치를 잘 못 만들었을 때는 `git branch -d <지울 브랜치 이름>` 입력합니다.
 
 ### 2단계: 브랜치 이동
 
-3. 깃 체크아웃으로 브랜치를 이동합니다. `git checkout <원하는 브랜치>`
-4. 깃 브랜치로 다시 현재 브랜치를 확인합니다.(\*가 이동됨)`git branch`
+1. 깃 체크아웃으로 브랜치를 이동합니다. `git checkout <원하는 브랜치>`
+2. 깃 브랜치로 다시 현재 브랜치를 확인합니다.(\*가 이동됨)`git branch`
 
 ### 3단계: 문서 작업 후 브랜치에서 커밋
 
-5. 브랜치가 잘 바뀌었다면 원하는 문서작업을 합니다.
-6. 작업이 끝난 후 `add` 와 `commit` 을 하고 `log`로 커밋내용을 확인합니다.
-7. HEAD(가장 최근에 커밋한 메시지)부분이 만든 브랜치를 가르키고, origin(원격 저장소)와 master(메인 브랜치)는 다른 부분을 가르킵니다.
+1. 브랜치가 잘 바뀌었다면 원하는 문서작업을 합니다.
+2. 작업이 끝난 후 `add` 와 `commit` 을 하고 `log`로 커밋내용을 확인합니다.
+3. HEAD(가장 최근에 커밋한 메시지)부분이 만든 브랜치를 가르키고, origin(원격 저장소)와 master(메인 브랜치)는 다른 부분을 가르킵니다.
 
 ### 4단계: 마스터 브랜치로 돌아가서 합치기
 
 결합(Merge)는 보통 마스터 브랜치에서 합니다.
 
-8. 이제 마스터 브랜치로 돌아갑니다.  `git checkout master`
-9. 마스터 브랜치에 새로만든 브랜치를 결합(merge)합니다. `git merge`
+1. 이제 마스터 브랜치로 돌아갑니다.  `git checkout master`
+2. 마스터 브랜치에 새로만든 브랜치를 결합(merge)합니다. `git merge`
 
 ### 5단계: 마무리
 
-10. 결합이 잘 되면 원격 저장소에 `push` 합니다.
-11. 브랜치를 사용할 일이 없으면 `git branch -d <지울 브랜치 이름>`으로 지웁니다.
+1. 결합이 잘 되면 원격 저장소에 `push` 합니다.
+2. 브랜치를 사용할 일이 없으면 `git branch -d <지울 브랜치 이름>`으로 지웁니다.
 
 ## :zero::five: 다섯번째 목표
 
@@ -300,6 +300,7 @@ README.md 관리하기
 - [MarkDown 수식 참고 사이트](https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/)
 
 MarkDown 이모티콘 사이트 Search on Google `markdown emoji`
+
 - 1st site [https://gist.github.com/rxaviers/7360908](https://gist.github.com/rxaviers/7360908)
 - 2ed site [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
 
@@ -328,20 +329,20 @@ git 관련 파일을 제거하고 파일을 압축 배포할 때 사용
 
     `git reset --hard <커밋 해쉿값>` -> 특정 커밋으로부터 최신까지 다 지우겠습니다.  
     `--hard` 옵션은 전부 다 지우고 [주의!] 커밋이 다 날라가 예전문서로 돌아가서 복구할 수 없습니다.  
-    `--sort `옵션은 윗부분 커밋은 남겨두고 해당 커밋때로 돌아갑니다.
+    `--sort`옵션은 윗부분 커밋은 남겨두고 해당 커밋때로 돌아갑니다.
 
 3. 커밋 수정 원격 저장소에 올리기
 
-	`git push -f` -f 로 강제로 푸쉬해야 가능합니다.
+    `git push -f` -f 로 강제로 푸쉬해야 가능합니다.
 
 ### 2단계: 커밋 메시지 수정하기
 
 가장 최근에 커밋한 메시지를 수정하는 방법입니다.
 
-1. `git commit --amend` 입력 
-2. Unix 에디터에 들어오면 관리자 모드와 수정모드로 나뉩니다. 
+1. `git commit --amend` 입력
+2. Unix 에디터에 들어오면 관리자 모드와 수정모드로 나뉩니다.
 3. 수정모드로 가기위해 `a`나 `i`키를 눌릅니다.
-4. 원하는 글자로 커서를 옮긴 뒤 수정합니다. 
+4. 원하는 글자로 커서를 옮긴 뒤 수정합니다.
 5. 수정이 완료되면 `ESC`를 누르고 `:wq`(저장 후 종료) 를 씁니다.
 6. 로컬 저장소로 강제로 푸쉬 `git push -f`합니다.
 
@@ -361,15 +362,15 @@ Git config 환경 설정에 대해 알아보기
 다양한 기능은 강의 참고 [동비나 유튜브 강의 링크 15강](https://www.youtube.com/watch?v=ys0lVeTHl7c&list=PLRx0vPvlEmdD5FLIdwTM4mKBgyjv4no81&index=15)
 
 1. Commit 하나 수정하기
-   
-   1. 수정하고 싶은 커밋 아래의 커밋 주소를 복사 
-   2. `git rebase -i <붙여넣기>` 
+
+   1. 수정하고 싶은 커밋 아래의 커밋 주소를 복사
+   2. `git rebase -i <붙여넣기>`
    3. vim 편집기 -> `pick` 을 `edit`으로 수정 후 저장
    4. `GIT_COMMITER_DATE="Oct 1 10:00:00 2018 +0000 git commit --amend -no-edit --date "Oct 1 10:00:00 2018 +0000"`
    5. `git rebase --continue`
 
 2. Filter를 사용
-   
+
    깃에서는 Filter 기능을 지원
 
    ```bash
@@ -397,16 +398,21 @@ SSH 방식으로 깃허브 저장소에 접속하는 과정을 간단히 살펴�
 ### 1단계: SSH 키 생성하기
 
 ```bash
-$ cd ~  # 홈 디렉토리로 이동합니다.
-$ ssh-keygen  # ssh key generate
+$ cd ~
+# 홈 디렉토리로 이동합니다.
+$ ssh-keygen
+# ssh key generate
 ```
+
 -> 우리는 잘 모르니 아무것도 입력하지 말고 `Enter` 만 계속 누르면 키가 생성됩니다.  
 
 ### 2단계: SSH 키 생성 확인하기
 
 ```bash
-$ cd ~/.ssh  # .ssh 폴더로 이동합니다. 없으면 ssh 키생성이 안됬습니다.
-$ ls -al  # 폴더안의 내용을 확인합니다.
+$ cd ~/.ssh
+# .ssh 폴더로 이동합니다. 없으면 ssh 키생성이 안됬습니다.
+$ ls -al
+# 폴더안의 내용을 확인합니다.
 ```
 
 ```bash
@@ -424,8 +430,8 @@ SSH 방식을 사용해서 깃허브에 접속하기
 1. 퍼블릭 키를 깃허브에 올리기
 
     ```bash
-    $ cd ~/.ssh
-    $ cat id_rsa.pub
+    cd ~/.ssh
+    cat id_rsa.pub
     ```
 
     ssh-rsa로 시작해서 끝까지(drag) 복사(`Ctrl` + `Insert`)합니다.
@@ -449,7 +455,7 @@ git rebase 마스터 하기
 
 ---
 
-# 깃 명령어 정리
+## 깃 명령어 정리
 
 1. 깃 설치 확인
 
@@ -512,15 +518,17 @@ git rebase 마스터 하기
 
     `git reset <옵션> <commit>` 옵션들
 
-       <옵션>
-       1. --sort: 최근 커밋을 하기 전 상태로 작업 트리를 되돌립니다.
-       2. --mixed: 최근 커밋과 스테이징을 하기 전 상태로 작업 트리로 되돌립니다.(기본 값)
-       3. --hard: 최근 커밋과 스테이징, 파일 수정을 하기 전 상태(하드한 상태)로 되돌립니다.
+    ```text
+    <옵션>
+    1. --sort: 최근 커밋을 하기 전 상태로 작업 트리를 되돌립니다.
+    2. --mixed: 최근 커밋과 스테이징을 하기 전 상태로 작업 트리로 되돌립니다.(기본 값)
+    3. --hard: 최근 커밋과 스테이징, 파일 수정을 하기 전 상태(하드한 상태)로 되돌립니다.
 
-       <commit>
-       1. HEAD^: 해드 이전 커밋으로 이동
-       2. HEAD~3: 해드 포함 3칸 이전 커밋으로 이동
-       3. 커밋 해쉬: 해당 해쉬 커밋으로 이동
+    <commit>
+    1. HEAD^: 해드 이전 커밋으로 이동
+    2. HEAD~3: 해드 포함 3칸 이전 커밋으로 이동
+    3. 커밋 해쉬: 해당 해쉬 커밋으로 이동
+    ```
 
 9. 브랜치 상태보기
 
